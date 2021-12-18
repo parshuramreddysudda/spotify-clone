@@ -47,10 +47,9 @@ export default NextAuth({
     callbacks: {
         async jwt({ token, account, user }) {
 
-            console.log("account details",account,token);
-
             //initial login
             if (account && user) {
+                console.log
                 return {
                     ...token,
                     accessToken: account.access_token,
@@ -60,11 +59,9 @@ export default NextAuth({
 
                 }
             }
-
             //retrun previous token if not expired
 
             if (Date.now() < token.accessTokenExpires) {
-                console.log("Existing token present")
                 return token;
             }
 
