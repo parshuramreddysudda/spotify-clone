@@ -7,12 +7,10 @@ async function refreshAccessToken(token) {
    
     try {
         spotifyApi.setAccessToken(token.accessToken);
-        spotifyApi.setRefreshToken(token.accessToken);
+        spotifyApi.setRefreshToken(token.refreshToken);
       
         const { body: refreshedToken } = await spotifyApi.refreshAccessToken();
-        console.log("wotking token is "+token.accessToken)
-        console.log("Refreshed token", refreshedToken);
-
+        console.log("Token Refreshed")
         return {
             ...token,
             accessToken: refreshedToken.access_token,
@@ -24,7 +22,7 @@ async function refreshAccessToken(token) {
         console.log(error);
         return {
             ...token,
-            error: "RefreshTokenError"
+            error: "RefreshAccessTokenError"
         }
     }
 }
