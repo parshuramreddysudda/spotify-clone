@@ -35,7 +35,7 @@ function Player() {
                 spotifyAPI.pause();
                 setIsPlaying(false)
             } else {
-                spotifyAPI.play()
+                spotifyAPI.play().catch(()=>{})
                 setIsPlaying(true)
             }
         })
@@ -57,7 +57,7 @@ function Player() {
 
     const debouncedAdjustVolume = useCallback(
         debounce((volume) => {
-            spotifyAPI.setVolume(volume).catch(()=>{})
+            spotifyAPI.setVolume(volume).catch((err)=>{})
         }, 500), [])
 
 

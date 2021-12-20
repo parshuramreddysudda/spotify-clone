@@ -14,7 +14,7 @@ function Song({ order, track }) {
     const playSong = () => {
         setCurrentTrackId(track.track.id);
         setIsPlaying(true);
-        spotifyAPI.play({uris:[track.track.uri]})
+        spotifyAPI.play({uris:[track.track.uri]}).catch(()=>{})
     }
     return (
         <div className="grid grid-cols-2 px-5 py-3 text-gray-500 rounded-lg cursor-pointer hover:bg-gray-900" onClick={playSong}>
