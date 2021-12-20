@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
+
+
+@layer components{
+    .button{
+        @apply h-5 w-5 cursor-pointer hover:scale-125 transition transform duration-100 ease-out
+    }
+    body{
+        font-family: 'Cabin', sans-serif;
+    }
+}

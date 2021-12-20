@@ -1,8 +1,7 @@
 
-import 'tailwindcss/tailwind.css'
+import '../styles/global.css'
 import { SessionProvider } from "next-auth/react"
 import { RecoilRoot } from 'recoil'
-
 import './index.css'
 
 export default function App({

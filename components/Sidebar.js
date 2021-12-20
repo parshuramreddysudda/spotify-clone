@@ -22,7 +22,7 @@ function Sidebar() {
 
 
     return (
-        <div className="h-screen p-5 overflow-y-scroll text-sm text-gray-500 border-r border-gray-900 scrollbar-hide">
+        <div className="h-screen p-5 overflow-y-scroll text-sm text-gray-500 border-r border-gray-900 scrollbar-hide pb-36 md:inline-flex sm:max-w[12rem] lg:text-sm hidden lg:max-w-[15rem]">
             <div className="space-y-4 font-bold">
                 <button key={2} className="flex items-center space-x-2 hover:text-white">
                     <HomeIcon className="w-5 h5" />
