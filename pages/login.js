@@ -1,9 +1,11 @@
-import { getProviders, signIn } from 'next-auth/react'
+import { getProviders, signIn, useSession } from 'next-auth/react'
 
 function Login({ providers }) {
+    const {data:session}=useSession();
+    console.log(session)
     return (
-        <div className="flex flex-col items-center bg-black min-h-screen w-full justify-center">
-            <img className="w-52 mb-5" src="https://links.papareact.com/9xl" alt="" />
+        <div className="flex flex-col items-center justify-center w-full min-h-screen bg-black">
+            <img className="mb-5 w-52" src="https://links.papareact.com/9xl" alt="" />
             {Object.values(providers).map((provider) => (
                 <div key={provider.name}>
                     <button className=" bg-[#18D860] text-white p-5 rounded-full"
