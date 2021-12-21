@@ -4,23 +4,23 @@ import { NextResponse } from "next/server";
 
 export async function middleware(req) {
 
-    // // token exist if the user is logged in 
+    // token exist if the user is logged in 
 
-    const token = await getToken({ req, secret: process.env.JWT_SECRET });
+    // const token = await getToken({ req, secret: process.env.JWT_SECRET });
 
-    // // Allow the requests if the following is true....
-    const { pathname } = req.nextUrl;
+    // Allow the requests if the following is true....
+    // const { pathname } = req.nextUrl;
 
-    // //    1) Its a request for next auth session & provider fetching
-    // //    2) the token exist 
+    //    1) Its a request for next auth session & provider fetching
+    //    2) the token exist 
 
 
-    // if (pathname.includes('/api/auth') || token) {
+    // if (token) {
     //     return NextResponse.next();
     // }
-    // // Redirect them to login page if nothing exist
-    if (!token && pathname !== '/login') {
-        return NextResponse.redirect('/login');
-    }
+    // Redirect them to login page if nothing exist
+    // if (!token && pathname !== '/login') {
+    //     return NextResponse.redirect('/login');
+    // }
 
 }
